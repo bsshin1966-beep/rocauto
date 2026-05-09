@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Video Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- 메인 콘텐츠 영역: 비디오 플레이어 섹션 -->
+        <section class="video-section" style="margin-top: 2rem;">
+            <!-- 섹션 제목 -->
+            <h2 style="text-align: left; margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--text-color);">구글 클라우드 영상
+                방영</h2>
+
+            <!-- 비디오와 UI 요소(언어 버튼 등)를 감싸는 컨테이너 -->
+            <!-- 이 div는 CSS를 통해 16:9 비율을 유지하고 내부 요소를 절대 위치(absolute)로 배치하는 역할을 합니다. -->
+            <div class="video-wrapper">
+                <!-- 구글 드라이브 공식 Iframe 플레이어 -->
+                <!-- 고용량 영상의 경우 다이렉트 다운로드 링크에서 발생하는 바이러스 검사 경고를 피하기 위해 preview(미리보기) 링크를 사용해야 가장 안정적입니다. -->
+                <iframe id="my-video" src="https://drive.google.com/file/d/1XIoVlCrY8_j8_1U-IzGkUiXJI6frC216/preview"
+                    allow="autoplay; encrypted-media" allowfullscreen style="width: 100%; height: 100%;"></iframe>
+
+                <!-- 언어 선택 토글 버튼 (KR/EN 전환) -->
+                <!-- Iframe 화면 위에 떠 있도록 CSS(z-index 및 absolute)가 설정되어 있습니다. -->
+                <button id="lang-toggle-btn" class="lang-toggle">
+                    <!-- 지구본 모양의 SVG 아이콘 -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                        <path d="M2 12H22" />
+                        <path
+                            d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" />
+                    </svg>
+                    <!-- 현재 언어 상태 텍스트 표시 영역 -->
+                    <span class="lang-text">KR</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
